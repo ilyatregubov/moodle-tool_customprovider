@@ -33,6 +33,6 @@ class hook_callbacks {
      * @param \customfield_number\hook\add_custom_providers $hook
      */
     public static function add_custom_provider(\customfield_number\hook\add_custom_providers $hook): void {
-        $hook->add_provider(new myprovidertest($hook->get_field()));
+        $hook->add_provider(new myprovidertest($hook->field));
     }
 }

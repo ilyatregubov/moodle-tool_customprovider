@@ -50,8 +50,8 @@ class myprovidertest extends provider_base {
         return $this->field->get_handler()->get_component() === 'core_course' &&
             $this->field->get_handler()->get_area() === 'course';
     }
-    public function prepare_export_value($value, ?\context $context = null): float|string|null {
-        return $value;
+    public function prepare_export_value($value, ?\context $context = null): ?string {
+        return (string) $value;
     }
 
     public function recalculate(?int $instanceid = null): void {
