@@ -51,7 +51,9 @@ class myprovidertest extends provider_base {
             $this->field->get_handler()->get_area() === 'course';
     }
     public function prepare_export_value($value, ?\context $context = null): ?string {
-        return (string) $value;
+        $src = 'https://download.moodle.org/unittest/test.jpg';
+        $value = '<img src="' . $src .'" alt="test">';
+        return $value . '<a class="btn btn-outline-primary me-3 mb-3 btn-insight" href="' . $src . '">link</a>';
     }
 
     public function recalculate(?int $instanceid = null): void {
